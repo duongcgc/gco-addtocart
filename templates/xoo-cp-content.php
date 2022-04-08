@@ -48,9 +48,15 @@ $pattern   = apply_filters( 'woocommerce_quantity_input_pattern', has_filter( 'w
 
 ?>
 
-
+<?php 
+	// require_once get_plugi
+	require_once plugin_dir_path(__DIR__) . '/templates/gco-cp-list-products.php';
+?>
 
 <table class="xoo-cp-pdetails clearfix">
+
+
+
 	<tr data-xoo_cp_key="<?php echo $cart_item_key; ?>">
 		<td class="xoo-cp-remove"><span class="xoo-cp-icon-cross xoo-cp-remove-pd"></span></td>
 		<td class="xoo-cp-pimg"><a href="<?php echo  $product_permalink; ?>"><?php echo $thumbnail; ?></a></td>
@@ -74,6 +80,10 @@ $pattern   = apply_filters( 'woocommerce_quantity_input_pattern', has_filter( 'w
 			<?php endif; ?>
 		</td>
 	</tr>
+
+
+
+
 </table>
 <div class="xoo-cp-ptotal"><span class="xcp-totxt"><?php _e('Total','added-to-cart-popup-woocommerce');?> : </span><span class="xcp-ptotal"><?php echo $product_subtotal; ?></span></div>
 
