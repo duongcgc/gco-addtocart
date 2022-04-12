@@ -40,3 +40,4 @@ function xoo_cp_rock_the_world(){
 	Xoo_CP::get_instance();
 }
 add_action('plugins_loaded','xoo_cp_rock_the_world');
+
