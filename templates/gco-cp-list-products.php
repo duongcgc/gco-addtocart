@@ -13,7 +13,8 @@
 		<tbody>
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
-			<?php
+			<?php			
+
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -73,7 +74,10 @@
 
 						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+								$current_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+
+								echo $current_price;
+								
 							?>
 						</td>
 
@@ -133,3 +137,11 @@
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 	</table>
+
+	<?php 
+		 global $woocommerce;
+		 $ajax_cart_amount = $woocommerce->cart->get_cart_total() ;
+		
+	?>					
+
+	<div class="xoo-cp-ptotal"><span class="xcp-totxt"><?php _e('Total','added-to-cart-popup-woocommerce');?> : </span><span class="xcp-ptotal"><?php echo  $ajax_cart_amount; ?></span></div>

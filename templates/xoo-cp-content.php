@@ -52,30 +52,30 @@ $pattern   = apply_filters( 'woocommerce_quantity_input_pattern', has_filter( 'w
 	// require_once get_plugi
 	require_once plugin_dir_path(__DIR__) . '/templates/gco-cp-list-products.php';
 ?>
-
+<!-- 
 <table class="xoo-cp-pdetails clearfix">
 
 
 
-	<tr data-xoo_cp_key="<?php echo $cart_item_key; ?>">
+	<tr data-xoo_cp_key="<?php //echo $cart_item_key; ?>">
 		<td class="xoo-cp-remove"><span class="xoo-cp-icon-cross xoo-cp-remove-pd"></span></td>
-		<td class="xoo-cp-pimg"><a href="<?php echo  $product_permalink; ?>"><?php echo $thumbnail; ?></a></td>
-		<td class="xoo-cp-ptitle"><a href="<?php echo  $product_permalink; ?>"><?php echo $product_name; ?></a>
+		<td class="xoo-cp-pimg"><a href="<?php //echo  $product_permalink; ?>"><?php echo $thumbnail; ?></a></td>
+		<td class="xoo-cp-ptitle"><a href="<?php //echo  $product_permalink; ?>"><?php echo $product_name; ?></a>
 
 		<?php if($attributes): ?>
-			<div class="xoo-cp-variations"><?php echo $attributes; ?></div>
+			<div class="xoo-cp-variations"><?php //echo $attributes; ?></div>
 		<?php endif; ?>
 
-		<td class="xoo-cp-pprice"><?php echo  $product_price; ?></td>
+		<td class="xoo-cp-pprice"><?php //echo  $product_price; ?></td>
 
 
 		<td class="xoo-cp-pqty">
 			<?php if ( $_product->is_sold_individually() || !$xoo_cp_gl_qtyen_value ): ?>
-				<span><?php echo $cart_item['quantity']; ?></span>				
+				<span><?php //echo $cart_item['quantity']; ?></span>				
 			<?php else: ?>
 				<div class="xoo-cp-qtybox">
 				<span class="xcp-minus xcp-chng">-</span>
-				<input type="number" class="xoo-cp-qty" max="<?php esc_attr_e( 0 < $max_value ? $max_value : '' ); ?>" min="<?php esc_attr_e($min_value); ?>" step="<?php echo esc_attr_e($step); ?>" value="<?php echo $cart_item['quantity']; ?>" pattern="<?php esc_attr_e( $pattern ); ?>">
+				<input type="number" class="xoo-cp-qty" max="<?php //esc_attr_e( 0 < $max_value ? $max_value : '' ); ?>" min="<?php esc_attr_e($min_value); ?>" step="<?php echo esc_attr_e($step); ?>" value="<?php echo $cart_item['quantity']; ?>" pattern="<?php esc_attr_e( $pattern ); ?>">
 				<span class="xcp-plus xcp-chng">+</span></div>
 			<?php endif; ?>
 		</td>
@@ -85,5 +85,5 @@ $pattern   = apply_filters( 'woocommerce_quantity_input_pattern', has_filter( 'w
 
 
 </table>
-<div class="xoo-cp-ptotal"><span class="xcp-totxt"><?php _e('Total','added-to-cart-popup-woocommerce');?> : </span><span class="xcp-ptotal"><?php echo $product_subtotal; ?></span></div>
-
+<div class="xoo-cp-ptotal"><span class="xcp-totxt"><?php //_e('Total','added-to-cart-popup-woocommerce');?> : </span><span class="xcp-ptotal"><?php echo $product_subtotal; ?></span></div>
+ -->
